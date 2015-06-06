@@ -18,7 +18,6 @@ public class TasksFragment extends Fragment {
 
     private Task mTask;
     private EditText mTaskTitle;
-    private EditText mTaskDetails;
     private CheckBox mTaskCompleted;
 
     @Override
@@ -40,24 +39,6 @@ public class TasksFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 mTask.setTitle(s.toString());
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
-        mTaskDetails = (EditText)v.findViewById(R.id.task_details);
-        mTaskDetails.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mTask.setDetail(s.toString());
             }
 
             @Override

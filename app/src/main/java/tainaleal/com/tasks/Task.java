@@ -8,7 +8,6 @@ import java.util.UUID;
 public class Task {
     private UUID mId;
     private String mTitle;
-    private String mDetail;
     private boolean mCompleted;
 
     public Task() {
@@ -29,14 +28,6 @@ public class Task {
 
     public void setTitle(String title) {
         this.mTitle = title;
-    }
-
-    public String getDetail() {
-        return mDetail;
-    }
-
-    public void setDetail(String detail) {
-        this.mDetail = detail;
     }
 
     public boolean isCompleted() {
