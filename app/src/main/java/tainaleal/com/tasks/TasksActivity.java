@@ -3,6 +3,8 @@ package tainaleal.com.tasks;
 import android.app.Fragment;
 import android.view.MenuItem;
 
+import java.util.UUID;
+
 /*
  * Activity that will host the Task Fragment
  */
@@ -11,7 +13,8 @@ public class TasksActivity extends SingleFragmentActivity {
 
     @Override
     protected Fragment createFragment() {
-        return new TasksFragment();
+        UUID taskId = (UUID)getIntent().getSerializableExtra(TasksFragment.EXTRA_TASK_ID);
+        return TasksFragment.newInstance(taskId);
     }
 
     @Override

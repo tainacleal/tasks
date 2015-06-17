@@ -1,6 +1,7 @@
 package tainaleal.com.tasks;
 
 import android.app.ListFragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +32,15 @@ public class TaskListFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         Task t = ((TaskAdapter)getListAdapter()).getItem(position);
+        Intent intent = new Intent(getActivity(), TasksActivity.class);
+        intent.putExtra(TasksFragment.EXTRA_TASK_ID, t.getId());
+        startActivity(intent);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        ((TaskAdapter)getListAdapter()).notifyDataSetChanged();
     }
 
     public class TaskAdapter extends ArrayAdapter<Task>{
