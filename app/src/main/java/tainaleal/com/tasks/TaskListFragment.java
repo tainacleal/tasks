@@ -32,7 +32,7 @@ public class TaskListFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         Task t = ((TaskAdapter)getListAdapter()).getItem(position);
-        Intent intent = new Intent(getActivity(), TasksActivity.class);
+        Intent intent = new Intent(getActivity(), TaskPagerActivity.class);
         intent.putExtra(TasksFragment.EXTRA_TASK_ID, t.getId());
         startActivity(intent);
     }
